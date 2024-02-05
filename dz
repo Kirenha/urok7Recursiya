@@ -1,4 +1,4 @@
-
+// Задача 1: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
 using System.ComponentModel;
 using System.Diagnostics;
 
@@ -14,7 +14,7 @@ Console.WriteLine("Введите число N");
 int r = Convert.ToInt32(Console.ReadLine()!);
 Console.WriteLine(Len(s, r));
 
-
+// Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца
 int [] PrintMass(int[] mas, int i = 0)
 {
     if (i < mas.Length)
@@ -52,7 +52,7 @@ PrintNewMass (mas);
 Console.WriteLine();
 
 
-
+// Задача 2: Напишите программу вычисления функции Аккермана с помощью рекурсии.
 Console.Write("Введите число M: ");
 int m = Convert.ToInt32(Console.ReadLine());
 
