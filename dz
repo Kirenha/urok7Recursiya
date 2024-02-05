@@ -1,0 +1,83 @@
+
+using System.ComponentModel;
+using System.Diagnostics;
+
+string Len(int start, int stop)
+{
+    if (start == stop) return Convert.ToString(start);
+    return start + " " + Len(start + 1, stop);
+}
+
+Console.WriteLine("Введите число M");
+int s = Convert.ToInt32(Console.ReadLine()!);
+Console.WriteLine("Введите число N");
+int r = Convert.ToInt32(Console.ReadLine()!);
+Console.WriteLine(Len(s, r));
+
+
+int [] PrintMass(int[] mas, int i = 0)
+{
+    if (i < mas.Length)
+    {
+        Console.Write(mas[i]);
+        PrintMass(mas, i + 1);
+    }
+    return mas;
+}
+
+int[] Random_Mas(int[] mas)
+{
+    for (int i = 0; i < mas.Length; i++)
+    {
+        mas[i] = new Random().Next(1, 10);
+    }
+    return mas;
+}
+
+int [] PrintNewMass(int[] mas, int i = 9)
+{
+    if (i >= 0)
+    {
+        Console.Write(mas[i]);
+        PrintNewMass(mas, i -1);
+    }
+    return mas;
+}
+
+int [] mas = Random_Mas(new int [10]);
+
+PrintMass(mas);
+Console.WriteLine();
+PrintNewMass (mas);
+Console.WriteLine();
+
+
+
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Akkerman(m, n);
+void Akkerman(int m, int n)
+{
+    Console.Write(A(m, n));
+}
+
+
+int A(int m, int n)
+{
+    if (m == 0)
+    {
+        return n + 1;
+    }
+    else if (n == 0 && m > 0)
+    {
+        return A(m - 1, 1);
+    }
+    else
+    {
+        return (A(m - 1, A(m, n - 1)));
+    }
+}
